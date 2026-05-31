@@ -14,6 +14,7 @@ This document defines the strict editorial standards for all documentation withi
 *   **Headers as Sentences:** When appropriate, use headers that convey the core takeaway rather than just a noun (e.g., "Memory is append-only" instead of "Memory Management").
 *   **Lists over Paragraphs:** If a paragraph contains more than two comma-separated items, convert it to a bulleted list.
 *   **Code Blocks:** Always specify the language for syntax highlighting. Always provide a brief explanation immediately preceding the block.
+*   **Callout Blocks:** Use VitePress custom containers (`::: info`, `::: tip`, `::: warning`, `::: danger`) to highlight critical warnings, architectural insights, or supplementary ideas so they visually stand out.
 
 ## Clarity and Density
 *   **Assume Competence, Explain Context:** Do not explain basic software engineering concepts (e.g., what Git is, what JSON is). Do explain why a specific architectural choice was made in this system.
@@ -26,6 +27,13 @@ This document defines the strict editorial standards for all documentation withi
 ## Maintenance and Versioning
 *   **No Numbered Headings:** Do not use numbers in markdown headings (e.g., use `# Vision` instead of `# 1. Vision`).
 *   **Sub-section Navigation:** Ensure all sub-sections use standard Markdown header levels (`##`, `###`). The documentation generator is configured to automatically expose these in the sidebar and as top-right jump links via the `outline` configuration.
-*   **File Naming:** Use `kebab-case.md`. 
-*   **Relative Linking:** Always use relative links without the `.md` extension in VitePress (e.g., `[Tasks](./08-data-schemas)`).
-*   **Code Parity:** If a JSON schema or configuration file is referenced in the documentation, it must exactly match the source code. Do not use pseudo-code for configuration examples.
+*   **File Naming:** Use `kebab-case.md`.
+*   **Synchronization (Single Source of Truth):** The Wiki documentation is the exact specification for the system. Any changes to the architecture, workflows, or data contracts MUST be updated synchronously across both the Wiki and the codebase. Code and documentation must never drift. 
+
+## Visual Storytelling (Diagrams & Callouts)
+*   **Mermaid Diagrams:** Whenever a process involves more than two actors or a multi-step loop (e.g., DAG routing, CI/CD pipelines, Git lifecycle), provide a ````mermaid```` block to visually map the workflow. Ensure diagrams are structurally sound so they render perfectly across light and dark modes.
+*   **Callout Blocks:** Use VitePress custom containers (`::: info`, `::: tip`, `::: warning`, `::: danger`) to highlight critical warnings, architectural insights, or supplementary ideas so they visually stand out from the main text block. Do not overuse them; reserve them for high-value context or strict warnings.
+
+## Code Generation & TDD Standards
+*   **Test-Driven Development (TDD):** All implementation code must be accompanied by automated tests. In the context of AI workflows, this follows the Adversarial TDD model (tests written first and verified to fail). For standard repository contributions, unit tests must cover all pure functions, core logic, and state mutations.
+*   **Zero Placeholders:** Code must be complete. No `// TODO: implement` comments are allowed in final outputs.

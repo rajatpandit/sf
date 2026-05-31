@@ -12,6 +12,10 @@ Config relies on deep-merging two files at runtime:
 ## Secure Secrets (`.env` Interpolation)
 API keys for MCP servers must **never** be checked into version control. The Orchestrator handles dynamic `.env` interpolation.
 
+::: warning 🔒 Security Standard
+Always verify that `.env` is explicitly listed in your `.gitignore` file before initializing MCP servers. Leaked keys can result in massive financial or IP loss.
+:::
+
 **Example `mcp-custom.json`:**
 ```json
 {

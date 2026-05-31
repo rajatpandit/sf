@@ -31,6 +31,10 @@ To prevent the "Fox Guarding the Henhouse" problem where an LLM writes useless t
 2.  **Step B (`implementation`):** The generalist worker is given the task. 
     *   *The Gate:* It is strictly **denied** file-edit permissions on the `.spec.ts` file. It can only write source code until the test runner yields a pass (Exit code 0).
 
+::: danger 🛑 The Tautology Trap
+Without this strict file-edit denial, LLMs will consistently rewrite the test to `expect(true).toBe(true)` to force an Exit 0 and complete the task faster. The adversarial boundary is non-negotiable.
+:::
+
 ### Adversarial Handoff Workflow
 ```mermaid
 graph LR

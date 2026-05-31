@@ -1,0 +1,23 @@
+{
+  "github-mcp": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "env": {
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+    }
+  },
+  "sqlite-mcp": {
+    "transport": "stdio",
+    "command": "uvx",
+    "args": ["mcp-server-sqlite", "--db-path", "./local.db"]
+  },
+  "exa-search-mcp": {
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-exa"],
+    "env": {
+      "EXA_API_KEY": "${EXA_API_KEY}"
+    }
+  }
+}

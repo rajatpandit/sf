@@ -1,0 +1,18 @@
+name: fast-feature
+description: Skips Discovery/PRD phases for rapid feature development.
+
+phases:
+  - id: memory-agent
+    next: architect
+  
+  - id: architect
+    next: planning
+
+  - id: planning
+    next: task-selector
+
+  - id: task-selector
+    next: execution-loop
+
+  - id: memory-update
+    next: END

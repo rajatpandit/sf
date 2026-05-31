@@ -24,6 +24,10 @@ When the `architect` agent finishes writing `architecture.md`, the Orchestrator 
 
 This allows human Staff Engineers to maintain strict editorial control over the system's design direction.
 
+::: tip ⚙️ Configuration
+Yield points are configurable per playbook. You can disable them by setting `require_approval: false` in `.agent-pipeline.yml` for rapid prototyping.
+:::
+
 ## Task-Scoped Context Slicing (The "Need to Know" Principle)
 Providing the entire codebase and PRD to an implementation agent causes token bloat and context degradation.
 

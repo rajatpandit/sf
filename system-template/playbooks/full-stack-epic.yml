@@ -1,0 +1,21 @@
+name: full-stack-epic
+description: The complete 13-step lifecycle for Greenfield development.
+
+phases:
+  - id: memory-agent
+    next: product-manager
+  
+  - id: product-manager
+    next: architect
+
+  - id: architect
+    next: planning
+
+  - id: planning
+    next: task-selector
+
+  - id: task-selector
+    next: execution-loop # Engine magic word to break into the TDD loop based on tasks.json
+
+  - id: memory-update
+    next: END

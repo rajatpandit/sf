@@ -10,6 +10,10 @@ In a team environment, preventing Intellectual Property (IP) leaks is paramount.
 *   **Enterprise Teams**: The organization provisions a secure AI Gateway (e.g., Cloudflare AI Gateway, LiteLLM) configured for zero data retention. Developers are given an `AI_GATEWAY_URL`.
 *   **The Enforcement**: If the Orchestrator detects `AI_GATEWAY_URL`, it automatically overrides all individual tool configurations (Pi, OpenCode, etc.) by exporting `OPENAI_BASE_URL=$AI_GATEWAY_URL`. It strictly forces all agent traffic through the corporate proxy, ensuring compliance without modifying the underlying tools.
 
+::: info 💡 Architectural Insight
+By overriding the `OPENAI_BASE_URL` environment variable at runtime, Synth Forge achieves compliance without requiring forks or modifications to the underlying agent CLI tools.
+:::
+
 ### Gateway Override Workflow
 ```mermaid
 sequenceDiagram

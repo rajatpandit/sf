@@ -1,0 +1,60 @@
+{
+  "tasks": [
+    {
+      "id": "TASK-1",
+      "title": "Define JSON Schemas & Config Templates",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Create the strict JSON Schemas (tasks, state, pipeline, mcp) and the default YAML playbooks. These must reside in system-template/ to be copied during init."
+    },
+    {
+      "id": "TASK-2",
+      "title": "Implement state-manager.js",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build lib/core/state-manager.js. It must read/write .agent-state.json deterministically and safely parse tasks.json to extract the active task and its context_slice."
+    },
+    {
+      "id": "TASK-3",
+      "title": "Implement git-sandbox.js",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build lib/core/git-sandbox.js. Expose functions to `git checkout -b agent/<TASK_ID>`, stage files, commit using conventional format, and revert to main."
+    },
+    {
+      "id": "TASK-4",
+      "title": "Implement mcp-merger.js & ENV Interpolation",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build lib/core/mcp-merger.js. It must read ~/.agent-system/mcp-defaults.json, ./.agents/mcp-custom.json, and .env. It must deep-merge them and replace ${VAR} syntax securely in memory."
+    },
+    {
+      "id": "TASK-5",
+      "title": "Implement pi-runner.js (Adapter)",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build lib/adapters/pi-runner.js. Use child_process.spawn to run `pi`. Detect AI_GATEWAY_URL in process.env and override OPENAI_BASE_URL if present before spawning."
+    },
+    {
+      "id": "TASK-6",
+      "title": "Implement dag-runner.js (State Machine)",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build lib/core/dag-runner.js. This is the main while loop. It reads the current playbook phase, invokes pi-runner, and evaluates exit codes to enforce the Adversarial TDD gate and retry logic."
+    },
+    {
+      "id": "TASK-7",
+      "title": "Implement CLI Handlers (init, claim, complete)",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build lib/cli/*.js to handle the sf commands. Setup Commander.js in bin/sf.js with detailed -h output. Map the human-pairing commands (claim/complete) to modify tasks.json."
+    },
+    {
+      "id": "TASK-8",
+      "title": "Build install.sh script",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Write install.sh to create ~/.agent-system/, copy the system-template into it, npm install dependencies, and symlink bin/sf.js to a global executable path."
+    }
+  ]
+}

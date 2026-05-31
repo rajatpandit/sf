@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent State Tracker",
+  "type": "object",
+  "properties": {
+    "current_phase": { "type": "string" },
+    "active_task_id": { "type": ["string", "null"] },
+    "status": {
+      "type": "string",
+      "enum": ["running", "paused", "failed", "completed"]
+    },
+    "retries": { "type": "integer", "minimum": 0 },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "phase": { "type": "string" },
+          "exit_code": { "type": "integer" },
+          "timestamp": { "type": "integer" }
+        },
+        "required": ["phase", "exit_code", "timestamp"]
+      }
+    }
+  },
+  "required": ["current_phase", "active_task_id", "status", "retries", "history"],
+  "additionalProperties": false
+}

@@ -14,6 +14,10 @@ When a new run begins, the `memory-agent` reads the baseline `context-summary.md
 
 If the number of event files exceeds the configuration threshold (e.g., `max_memory_events: 20`), the Orchestrator triggers an auto-compress phase. The AI squashes all lessons into a new baseline `context-summary.md`, deletes the event files, and commits the clean state.
 
+::: info 🧠 Token Optimization
+Auto-compression prevents the Context Window from degrading over time. A highly compressed baseline document is cheaper and faster for the LLM to process than 20 individual event files.
+:::
+
 ### Auto-Compression Workflow
 ```mermaid
 graph TD

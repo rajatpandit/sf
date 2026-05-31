@@ -1,62 +1,53 @@
 {
-  "hash": "bcf131d3",
-  "configHash": "8620f143",
+  "hash": "2e3084dc",
+  "configHash": "09d31f01",
   "lockfileHash": "d949a448",
-  "browserHash": "95e783e4",
+  "browserHash": "19269799",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "4f21495e",
+      "fileHash": "4fdbb6dd",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "50775216",
+      "fileHash": "6a46c573",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "632c381f",
+      "fileHash": "efa6fade",
       "needsInterop": false
     },
     "@braintree/sanitize-url": {
       "src": "../../../node_modules/@braintree/sanitize-url/dist/index.js",
       "file": "@braintree_sanitize-url.js",
-      "fileHash": "4336a1f8",
+      "fileHash": "812de7fa",
       "needsInterop": true
     },
     "dayjs": {
       "src": "../../../node_modules/dayjs/dayjs.min.js",
       "file": "dayjs.js",
-      "fileHash": "2b6c5a20",
+      "fileHash": "df548ef4",
       "needsInterop": true
     },
     "cytoscape-cose-bilkent": {
       "src": "../../../node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js",
       "file": "cytoscape-cose-bilkent.js",
-      "fileHash": "815edadf",
+      "fileHash": "1b29c32f",
       "needsInterop": true
     },
     "cytoscape": {
       "src": "../../../node_modules/cytoscape/dist/cytoscape.esm.mjs",
       "file": "cytoscape.js",
-      "fileHash": "e7da2e9f",
-      "needsInterop": false
-    },
-    "@theme/index": {
-      "src": "../../../node_modules/vitepress/dist/client/theme-default/index.js",
-      "file": "@theme_index.js",
-      "fileHash": "6544a021",
+      "fileHash": "6b1bf46e",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-Q2AGJZQN": {
-      "file": "chunk-Q2AGJZQN.js"
-    },
     "chunk-QNHWDCKI": {
       "file": "chunk-QNHWDCKI.js"
     },

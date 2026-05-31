@@ -9,6 +9,11 @@ The AI Orchestrator acts on `tasks.json`. Humans can intercept and complete task
 1. You want to build the UI for TASK-3 yourself.
 2. Run `sf claim TASK-3`.
 3. The Orchestrator updates `tasks.json` (`assigned_role: human`), checks out a Git branch (`git checkout -b human/TASK-3`), and suspends AI assignment for this ticket.
+
+::: warning ⚠️ Branch Discipline
+Do not switch branches or run `sf --resume` in another terminal while actively working on a claimed task. Finish the code and run `sf complete` first to prevent state corruption.
+:::
+
 4. You write the code.
 5. Run `sf complete TASK-3`.
 6. The Orchestrator stages your work and hands the state machine over to the AI `reviewer` agent to audit your human code.

@@ -23,6 +23,10 @@ Designed for major framework bumps (e.g., React 17 -> 19).
 *   Relies heavily on AST (Abstract Syntax Tree) parsing skills rather than just text generation.
 *   The `test-engineer` phase is skipped. The Orchestrator relies strictly on the project's *existing* test suite passing.
 
+::: tip 💡 Migration Insight
+AST-based transformations guarantee that business logic is unaffected during syntax upgrades, eliminating the primary risk of LLM-based refactoring.
+:::
+
 ## The `tech-port` Playbook (V2 Roadmap)
 Designed for rewriting modules into new languages (e.g., Python to Rust).
 *   Requires two `implementation` agents running concurrently: one reading the legacy code, one writing the new code.
