@@ -5,6 +5,8 @@ const { runDag } = require('../lib/core/dag-runner');
 const { claimBranch, commitAndRevert } = require('../lib/core/git-sandbox');
 const { updateTaskStatus, readState, writeState } = require('../lib/core/state-manager');
 
+const { initProject } = require('../lib/cli/init');
+
 program
   .name('sf')
   .description('Synth Forge - The AI Exoskeleton CLI')
@@ -57,7 +59,7 @@ program
   .command('project-init')
   .description('Initialize local .agents/ scope')
   .action(() => {
-    console.log('[SF] Project scope initialized.');
+    initProject();
   });
 
 program.parse(process.argv);

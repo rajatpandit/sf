@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": "TASK-9",
+      "title": "Define Guardrail Constitutions",
+      "status": "todo",
+      "assigned_role": "backend-dev",
+      "context_slice": "Create system-template/config/constitutions/strict.md and lean.md. These files define the engineering culture injected into every agent prompt. 'strict' mandates TDD, zero placeholders, and strict typing. 'lean' biases for action and prototyping speed."
+    },
+    {
+      "id": "TASK-10",
+      "title": "Implement Custom Skills (Kanban & Slicer)",
+      "status": "todo",
+      "assigned_role": "backend-dev",
+      "context_slice": "Create system-template/skills/kanban-manager.md and context-slicer.md. These are the Pi skills that teach the Planning agent how to break down requirements into tasks.json and how to extract only relevant constraints into the context_slice."
+    },
+    {
+      "id": "TASK-11",
+      "title": "Implement Custom Skills (Role Recruiter)",
+      "status": "todo",
+      "assigned_role": "backend-dev",
+      "context_slice": "Create system-template/skills/role-recruiter.md. This Pi skill teaches the Planning agent how to evaluate if a task requires domain knowledge outside the core roster, and if so, how to write a new role to ./.agents/custom-roles/."
+    }
+  ]
+}

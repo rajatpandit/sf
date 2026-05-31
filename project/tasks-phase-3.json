@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": "TASK-12",
+      "title": "Implement Project Initialization Logic",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Build the functionality for `sf project-init` in `lib/cli/init.js`. It must create the `./.agents/` directory, write an empty `.agent-state.json`, create a `.agent-version` lockfile reading from the global current version, and scaffold a default `.agent-pipeline.yml`."
+    },
+    {
+      "id": "TASK-13",
+      "title": "Scaffold Local MCP and Memory Dirs",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Update `lib/cli/init.js` to also create `./.agents/custom-roles/` and `./.agents/memory-events/`. It must also drop an `mcp-custom.example.json` to guide developers on configuring local MCPs securely."
+    },
+    {
+      "id": "TASK-14",
+      "title": "Wire CLI to Init Handler",
+      "status": "done",
+      "assigned_role": "backend-dev",
+      "context_slice": "Update `bin/sf.js` to map the `project-init` command to the new initialization logic in `lib/cli/init.js`."
+    }
+  ]
+}

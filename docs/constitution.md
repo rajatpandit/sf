@@ -36,4 +36,5 @@ This document defines the strict editorial standards for all documentation withi
 
 ## Code Generation & TDD Standards
 *   **Test-Driven Development (TDD):** All implementation code must be accompanied by automated tests. In the context of AI workflows, this follows the Adversarial TDD model (tests written first and verified to fail). For standard repository contributions, unit tests must cover all pure functions, core logic, and state mutations.
+*   **Automated Reviewer Gates:** When bootstrapping or extending the Orchestrator, developers must write localized validation scripts (e.g., `reviewer-check.js`) to assert that the generated artifacts match the acceptance criteria before merging. Code and prompts must systematically prove their compliance.
 *   **Zero Placeholders:** Code must be complete. No `// TODO: implement` comments are allowed in final outputs.
