@@ -131,12 +131,21 @@ hero:
   </div>
 
   <div class="home-section">
+    <h2>Extending Synth Forge</h2>
+    <div class="home-grid">
+      <div class="home-link-group">
+        <a href="/14-adding-adapters" class="home-link"><span class="mono">EXT</span> Adding Tool Adapters</a>
+        <a href="/15-contributing-roles" class="home-link"><span class="mono">EXT</span> Contributing Custom Roles</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-section">
     <h2>Reference & Appendix</h2>
     <div class="home-grid">
       <div class="home-link-group">
         <a href="/12-cli-reference" class="home-link"><span class="mono">REF</span> CLI Command Reference</a>
         <a href="/13-troubleshooting" class="home-link"><span class="mono">REF</span> Troubleshooting & Logs</a>
-        <a href="/14-adding-adapters" class="home-link"><span class="mono">REF</span> Adding Tool Adapters</a>
         <a href="/roadmap" class="home-link"><span class="mono">REF</span> Roadmap & Vision</a>
       </div>
       <div class="home-link-group">

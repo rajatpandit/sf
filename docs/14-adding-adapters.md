@@ -55,3 +55,15 @@ function getAdapter(toolName) {
 
 ## Security Warning (MCPs & Environments)
 Your adapter receives the `env` object already pre-interpolated and protected by the Orchestrator's Gateway Override logic. **You must pass this `env` object to your `spawnSync` call.** If you spawn the process using the default system environment, you risk leaking IP to public LLM endpoints.
+
+## Current Official Adapters
+The following adapters are officially supported and maintained in the `lib/adapters/` directory:
+*   [pi-adapter.js](https://github.com/rajatpandit/sf/blob/main/lib/adapters/pi-adapter.js)
+*   [opencode-adapter.js](https://github.com/rajatpandit/sf/blob/main/lib/adapters/opencode-adapter.js)
+*   [gemini-adapter.js](https://github.com/rajatpandit/sf/blob/main/lib/adapters/gemini-adapter.js)
+
+## Submitting a Pull Request
+When submitting a PR to add a new tool adapter, ensure your PR description includes:
+1. **Tool Verification:** A link to the tool's public repository or documentation.
+2. **Environment Handling:** Confirmation that the `env` object is explicitly passed to the `spawnSync` child process.
+3. **Exit Code Handling:** Confirmation that the tool accurately returns an exit code of `1` on failure and `0` on success to support the Adversarial TDD phase.

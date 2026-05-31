@@ -51,8 +51,14 @@ export default withMermaid(defineConfig({
         items: [
           { text: 'CLI Command Reference', link: '/12-cli-reference' },
           { text: 'Troubleshooting & Logs', link: '/13-troubleshooting' },
-          { text: 'Adding Tool Adapters', link: '/14-adding-adapters' },
           { text: 'Roadmap & Vision', link: '/roadmap' }
+        ]
+      },
+      {
+        text: 'Extending Synth Forge',
+        items: [
+          { text: 'Adding Tool Adapters', link: '/14-adding-adapters' },
+          { text: 'Contributing Custom Roles', link: '/15-contributing-roles' }
         ]
       },
       {
