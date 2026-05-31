@@ -10,18 +10,20 @@ const { initProject } = require('../lib/cli/init');
 program
   .name('sf')
   .description('Synth Forge - The AI Exoskeleton CLI')
-  .version('0.0.1');
+  .version('0.0.1')
+  .option('--debug', 'Stream raw output from the underlying AI tool')
+  .hook('preAction', (thisCommand) => {
+    if (thisCommand.opts().debug) {
+      process.env.SF_DEBUG = "true";
+    }
+  });
 
 program
   .command('run', { isDefault: true })
   .description('Run the active pipeline (default action)')
   .option('--playbook <name>', 'Override default playbook')
   .option('--resume', 'Resume a paused pipeline')
-  .option('--debug', 'Stream raw output from the underlying AI tool')
   .action(async (options) => {
-    if (options.debug) {
-      process.env.SF_DEBUG = "true";
-    }
     if (options.resume) {
       let state = readState();
       if (state && state.status === 'paused') {
