@@ -9,6 +9,7 @@
     "global_settings": {
       "type": "object",
       "properties": {
+        "agent_tool": { "type": "string", "enum": ["pi", "opencode", "gemini"] },
         "require_approval": {
           "type": "object",
           "additionalProperties": { "type": "boolean" }
