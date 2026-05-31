@@ -20,6 +20,9 @@ npm init -y
 npm install -D typescript @types/node ts-node jest @types/jest
 npx tsc --init
 
+# Create .gitignore so we don't commit node_modules
+echo "node_modules/" > .gitignore
+
 # Make the initial commit
 git add .
 git commit -m "chore: initial project setup"
