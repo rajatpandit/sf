@@ -89,6 +89,19 @@ hero:
 <div class="home-content">
 
   <div class="home-section">
+    <h2>Introduction & Guides</h2>
+    <div class="home-grid">
+      <div class="home-link-group">
+        <a href="/getting-started" class="home-link"><span class="mono">01</span> Getting Started</a>
+        <a href="/features" class="home-link"><span class="mono">02</span> Features</a>
+      </div>
+      <div class="home-link-group">
+        <a href="/demo-guide" class="home-link"><span class="mono">03</span> End-to-End Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-section">
     <h2>Deployment Paths</h2>
     <div class="home-grid">
       <div class="home-link-group">

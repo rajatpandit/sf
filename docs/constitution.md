@@ -38,3 +38,14 @@ This document defines the strict editorial standards for all documentation withi
 *   **Test-Driven Development (TDD):** All implementation code must be accompanied by automated tests. In the context of AI workflows, this follows the Adversarial TDD model (tests written first and verified to fail). For standard repository contributions, unit tests must cover all pure functions, core logic, and state mutations.
 *   **Automated Reviewer Gates:** When bootstrapping or extending the Orchestrator, developers must write localized validation scripts (e.g., `reviewer-check.js`) to assert that the generated artifacts match the acceptance criteria before merging. Code and prompts must systematically prove their compliance.
 *   **Zero Placeholders:** Code must be complete. No `// TODO: implement` comments are allowed in final outputs.
+
+## Git Sandbox Discipline
+*   **Isolated Execution:** AI agents are never permitted to execute code changes directly on the `main` branch. All modifications must occur within an isolated `agent/<TASK-ID>` branch automatically provisioned by the Orchestrator.
+*   **Atomic Commits:** Upon task completion and successful AI review, changes must be staged and committed using the Conventional Commits format (e.g., `feat(scope): description [TASK-ID]`) before merging or opening a Draft PR.
+*   **Human Handoff (Claiming):** If a human claims a task, they must use the Orchestrator CLI (`sf claim`) to generate a `human/<TASK-ID>` branch. Human developers must not manually switch branches or run `sf --resume` in another terminal while actively working on a claimed task to prevent DAG state corruption.
+
+## Architectural Boundaries & Security
+*   **Context Slicing:** Execution agents must never be fed the entire PRD or Architecture document. They must only receive a highly targeted `context_slice` specific to their atomic task. This mathematically minimizes token bloat and prevents context-bleed hallucinations.
+*   **Human-in-the-Loop (HITL):** The system must not act as a runaway script. The Orchestrator must enforce yield points (e.g., halting after Architecture generation) to allow human engineers to review, approve, or alter the trajectory before the execution loop begins.
+*   **Event-Sourced Memory:** Shared AI knowledge must not rely on single, mutating state files that cause Git merge conflicts. Memory updates must be written as append-only, timestamped event files.
+*   **Zero Hardcoded Secrets:** Never commit API keys or sensitive data. All external tool configurations (e.g., MCP servers, AI Gateways) must utilize dynamic `.env` interpolation at runtime.
