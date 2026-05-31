@@ -45,6 +45,9 @@ This document defines the strict editorial standards for all documentation withi
 *   **Atomic Commits:** Upon task completion and successful AI review, changes must be staged and committed using the Conventional Commits format (e.g., `feat(scope): description [TASK-ID]`) before merging or opening a Draft PR.
 *   **Human Handoff (Claiming):** If a human claims a task, they must use the Orchestrator CLI (`sf claim`) to generate a `human/<TASK-ID>` branch. Human developers must not manually switch branches or run `sf --resume` in another terminal while actively working on a claimed task to prevent DAG state corruption.
 
+## AI Development Workflow (Bootstrapping)
+*   **Plan Before Execution:** When extending or modifying the framework, the AI agent must always present a detailed analysis and execution plan first. The agent must pause and wait for explicit human approval before writing any code or modifying documentation.
+
 ## Architectural Boundaries & Security
 *   **Context Slicing:** Execution agents must never be fed the entire PRD or Architecture document. They must only receive a highly targeted `context_slice` specific to their atomic task. This mathematically minimizes token bloat and prevents context-bleed hallucinations.
 *   **Human-in-the-Loop (HITL):** The system must not act as a runaway script. The Orchestrator must enforce yield points (e.g., halting after Architecture generation) to allow human engineers to review, approve, or alter the trajectory before the execution loop begins.

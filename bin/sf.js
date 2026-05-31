@@ -13,7 +13,7 @@ program
   .version('0.0.1');
 
 program
-  .command('run')
+  .command('run', { isDefault: true })
   .description('Run the active pipeline (default action)')
   .option('--playbook <name>', 'Override default playbook')
   .option('--resume', 'Resume a paused pipeline')
@@ -25,6 +25,19 @@ program
         state.retries = 0;
         writeState(state);
       }
+    }
+    runDag();
+  });
+
+program
+  .command('resume')
+  .description('Alias for `sf run --resume`')
+  .action(() => {
+    let state = readState();
+    if (state && state.status === 'paused') {
+      state.status = 'running';
+      state.retries = 0;
+      writeState(state);
     }
     runDag();
   });
@@ -63,8 +76,3 @@ program
   });
 
 program.parse(process.argv);
-
-if (!process.argv.slice(2).length) {
-  // Default to run
-  runDag();
-}
