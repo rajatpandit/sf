@@ -35,6 +35,8 @@ sf project-init
 ```
 *(This creates the `.agents/` directory, `.agent-pipeline.yml`, and your state tracking files).*
 
+By default, the pipeline is configured to use Google's Gemini models (`gemini-3.1-pro-preview` and `gemini-2.5-flash`). Ensure you have your `GEMINI_API_KEY` exported in your terminal or saved in your local `.env` file.
+
 ## Step 4: Plant the "Seed" Vision
 The AI needs to know what you want to build. Create a `VISION.md` file in the root directory.
 
