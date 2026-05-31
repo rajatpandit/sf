@@ -38,6 +38,7 @@ This document defines the strict editorial standards for all documentation withi
 *   **Test-Driven Development (TDD):** All implementation code must be accompanied by automated tests. In the context of AI workflows, this follows the Adversarial TDD model (tests written first and verified to fail). For standard repository contributions, unit tests must cover all pure functions, core logic, and state mutations.
 *   **Automated Reviewer Gates:** When bootstrapping or extending the Orchestrator, developers must write localized validation scripts (e.g., `reviewer-check.js`) to assert that the generated artifacts match the acceptance criteria before merging. Code and prompts must systematically prove their compliance.
 *   **Zero Placeholders:** Code must be complete. No `// TODO: implement` comments are allowed in final outputs.
+*   **No Preview Models:** Framework defaults and configuration templates must rely exclusively on stable, production-ready LLM models (e.g., `gemini-2.5-pro` instead of `gemini-3.1-pro-preview`). Do not hardcode preview or experimental models into the system defaults.
 
 ## Git Sandbox Discipline
 *   **Isolated Execution:** AI agents are never permitted to execute code changes directly on the `main` branch. All modifications must occur within an isolated `agent/<TASK-ID>` branch automatically provisioned by the Orchestrator.
