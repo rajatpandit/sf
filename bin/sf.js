@@ -17,7 +17,7 @@ program
   .description('Run the active pipeline (default action)')
   .option('--playbook <name>', 'Override default playbook')
   .option('--resume', 'Resume a paused pipeline')
-  .action((options) => {
+  .action(async (options) => {
     if (options.resume) {
       let state = readState();
       if (state && state.status === 'paused') {
@@ -26,20 +26,20 @@ program
         writeState(state);
       }
     }
-    runDag();
+    await runDag();
   });
 
 program
   .command('resume')
   .description('Alias for `sf run --resume`')
-  .action(() => {
+  .action(async () => {
     let state = readState();
     if (state && state.status === 'paused') {
       state.status = 'running';
       state.retries = 0;
       writeState(state);
     }
-    runDag();
+    await runDag();
   });
 
 program
